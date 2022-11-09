@@ -2,7 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/</item>
-        <item>@font/bungee</item>
-        <item>@font/sofia</item>
+        <item>@font/bungeefont</item>
+        <item>@font/sofiafont</item>
     </array>
 </resources>

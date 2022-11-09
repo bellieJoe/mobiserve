@@ -7,13 +7,12 @@
     android:background="@drawable/untitled_design"
     tools:context=".main_navigation">
 
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
         android:layout_marginBottom="640dp"
         android:src="@drawable/wave" />
-
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/body_container"
@@ -22,7 +21,8 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="100dp" />
+        android:layout_marginBottom="100dp"
+        tools:ignore="MissingClass" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
