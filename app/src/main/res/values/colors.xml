@@ -14,4 +14,7 @@
     <color name="medyo_white">#F9F9F9</color>
     <color name="whitewari">#FFFDE3</color>
 
+    <color name="bg_yellow">#FFFED182</color>
+    <color name="bg_yellow_tint">#FFBC5A06</color>
+
 </resources>
