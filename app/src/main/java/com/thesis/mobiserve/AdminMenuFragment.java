@@ -2,11 +2,19 @@ package com.thesis.mobiserve;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +22,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class AdminMenuFragment extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +67,48 @@ public class AdminMenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_menu, container, false);
+        View contentView = inflater.inflate(R.layout.fragment_admin_menu, container, false);
+        ListView listView = contentView.findViewById(R.id.admin_menu_list);
+
+        List<String> list = new ArrayList<>();
+        for(int i=0;i<100;i++){
+            list.add("Item "+i);
+        }
+
+        CustomAdapter listAdapter = new CustomAdapter(list);
+        listView.setAdapter(listAdapter);
+
+        return contentView;
+    }
+
+    class CustomAdapter extends BaseAdapter {
+        List<String> items;
+
+        public CustomAdapter(List<String> items) {
+            super();
+            this.items = items;
+        }
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return items.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return items.get(i).hashCode();
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            TextView textView = new TextView(getContext());
+            textView.setText(items.get(i));
+            return textView;
+        }
     }
 }
