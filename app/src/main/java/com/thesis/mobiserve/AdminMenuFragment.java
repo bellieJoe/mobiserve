@@ -1,5 +1,7 @@
 package com.thesis.mobiserve;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -72,7 +75,7 @@ public class AdminMenuFragment extends Fragment {
 
         List<String> list = new ArrayList<>();
         for(int i=0;i<100;i++){
-            list.add("Item "+i);
+            list.add("Menu "+i);
         }
 
         CustomAdapter listAdapter = new CustomAdapter(list);
@@ -106,9 +109,12 @@ public class AdminMenuFragment extends Fragment {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            TextView textView = new TextView(getContext());
-            textView.setText(items.get(i));
-            return textView;
+            CheckBox checkBox = new CheckBox(getContext());
+            checkBox.setPadding(0, 10, 0, 10);
+            checkBox.setTextSize(18);
+            checkBox.setTextColor(getResources().getColor(R.color.black));
+            checkBox.setText(items.get(i));
+            return checkBox;
         }
     }
 }
