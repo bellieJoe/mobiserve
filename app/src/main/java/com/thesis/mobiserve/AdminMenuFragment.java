@@ -1,5 +1,6 @@
 package com.thesis.mobiserve;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -81,6 +83,16 @@ public class AdminMenuFragment extends Fragment {
         CustomAdapter listAdapter = new CustomAdapter(list);
         listView.setAdapter(listAdapter);
 
+        Button btnAdminAddMenu = (Button) contentView.findViewById(R.id.btnAdminAddMenu);
+        Intent adminAddMenuIntent = new Intent(getContext(), AdminAddMenu.class);
+
+        btnAdminAddMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(adminAddMenuIntent);
+            }
+        });
+
         return contentView;
     }
 
@@ -117,4 +129,5 @@ public class AdminMenuFragment extends Fragment {
             return checkBox;
         }
     }
+
 }

@@ -55,12 +55,13 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btnAdminAddMenu"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background"
+                android:onClick="showAddMenuAcivity"
                 android:text="Add Menu"
                 android:textColor="@color/black" />
         </TableRow>
