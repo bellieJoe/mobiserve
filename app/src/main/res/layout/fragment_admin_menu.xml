@@ -13,12 +13,13 @@
         android:id="@+id/menu_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
         android:text="Kusina sa Plaza Menu"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/admin_menu_list"
         app:layout_constraintTop_toTopOf="parent"
-        android:paddingBottom="10dp"
         />
 
     <ListView
@@ -26,8 +27,45 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/menu_title"
+        app:layout_constraintBottom_toTopOf="@id/admin_menu_actions">
+
+    </ListView>
+
+    <TableLayout
+        android:id="@+id/admin_menu_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/admin_menu_list">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:backgroundTint="@color/background"
+                android:text="Delete from Customer UI"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:backgroundTint="@color/background"
+                android:text="Add Menu"
+                android:textColor="@color/black" />
+        </TableRow>
+
+    </TableLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
