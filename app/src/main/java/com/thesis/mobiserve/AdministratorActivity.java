@@ -52,6 +52,4 @@ public class AdministratorActivity extends AppCompatActivity {
         this.navController.popBackStack();
     }
 
-
-
 }

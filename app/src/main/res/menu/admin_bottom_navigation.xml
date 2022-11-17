@@ -6,9 +6,9 @@
         android:title="Home"/>
 
     <item
-        android:id="@+id/navigation_admin_orders"
+        android:id="@+id/navigation_admin_orders_record"
         android:icon="@drawable/ic_list_admin"
-        android:title="Menu" />
+        android:title="Orders Record" />
 
     <item
         android:id="@+id/navigation_admin_subscriber"
