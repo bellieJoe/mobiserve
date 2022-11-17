@@ -20,6 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class AdministratorActivity extends AppCompatActivity {
     public NavController navController;
@@ -36,20 +37,37 @@ public class AdministratorActivity extends AppCompatActivity {
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(this.navController.getGraph()).build();
         this.bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
-        NavigationUI.setupWithNavController(this.bottomNavigationView, this.navController);
-//        this.navController.navigate
 
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                AdministratorActivity.this.navController.popBackStack();
+                AdministratorActivity.this.navController.navigate(item.getItemId());
+                return true;
+            }
+        });
+
+    }
+
+
+    public void resetNavStack(View v){
+        this.navController.popBackStack();
     }
 
     public void showMenu(View v){
         this.navController.navigate(R.id.navigation_admin_menu);
-//        this.navController.navigate(R.id.navigation_admin_home);
     }
 
     public void hideMenu(View v){
-//        this.navHostFragment.
-//        this.navController.navigate(R.id.navigation_admin_home);
-        this.navController.popBackStack();
+        this.navController.popBackStack(R.id.navigation_admin_home, false);
+    }
+
+    public void showOrderRecords(View v){
+        this.navController.navigate(R.id.navigation_admin_order_history);
+    }
+
+    public void hideOrderRecords(View v){
+        this.navController.popBackStack(R.id.navigation_admin_orders_record, false);
     }
 
 }

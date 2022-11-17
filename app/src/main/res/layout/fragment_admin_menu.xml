@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:onClick="hideMenu"
+        android:onClick="resetNavStack"
         android:text="Back"
         android:textColor="#535353"
         android:textColorHighlight="#333131"

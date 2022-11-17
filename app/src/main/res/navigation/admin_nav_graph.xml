@@ -25,11 +25,22 @@
         android:id="@+id/navigation_admin_orders_record"
         android:name="com.thesis.mobiserve.AdminOrdersRecordFragment"
         android:label="fragment_admin_orders_record"
-        tools:layout="@layout/fragment_admin_orders_record" />
+        tools:layout="@layout/fragment_admin_orders_record" >
+        <action
+            android:id="@+id/action_navigation_admin_orders_record_to_adminOrderHistory"
+            app:destination="@id/navigation_admin_order_history" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_admin_settings"
         android:name="com.thesis.mobiserve.AdminMenuFragment"
         android:label="fragment_admin_menu"
         tools:layout="@layout/fragment_admin_menu" />
+
+    <fragment
+        android:id="@+id/navigation_admin_order_history"
+        android:name="com.thesis.mobiserve.AdminOrderHistory"
+        android:label="fragment_admin_order_history"
+        tools:layout="@layout/fragment_admin_order_history" />
+
 </navigation>
