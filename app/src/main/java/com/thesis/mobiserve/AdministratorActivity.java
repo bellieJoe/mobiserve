@@ -22,41 +22,36 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AdministratorActivity extends AppCompatActivity {
-    private NavController navController;
+    public NavController navController;
     private BottomNavigationView bottomNavigationView;
+    private NavHostFragment navHostFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrator);
 
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.adminNavHostFragment);
+        this.navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.adminNavHostFragment);
         this.navController = navHostFragment.getNavController();
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(this.navController.getGraph()).build();
         this.bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
         NavigationUI.setupWithNavController(this.bottomNavigationView, this.navController);
-
-        //
-        this.initializeMenu();
+//        this.navController.navigate
 
     }
 
-    private void initializeMenu(){
-//        ListView lv;
-//        lv = (ListView) findViewById(R.id.admin_menu_list);
-//        String menus[]= { "Menu 1", "Menu 2", "Menu 3", "Menu 4", "Menu 5", "Menu 6" };
-//        TextView tv = new TextView(this);
-//        tv.setText("Menu");
-//        lv.addView(tv);
-//        this.addContentView(
-//                tv,
-//                new ConstraintLayout.LayoutParams(
-//                        ConstraintLayout.LayoutParams.WRAP_CONTENT,
-//                        ConstraintLayout.LayoutParams.WRAP_CONTENT
-//                )
-//        );
+    public void showMenu(View v){
+        this.navController.navigate(R.id.navigation_admin_menu);
+//        this.navController.navigate(R.id.navigation_admin_home);
     }
+
+    public void hideMenu(View v){
+//        this.navHostFragment.
+//        this.navController.navigate(R.id.navigation_admin_home);
+        this.navController.popBackStack();
+    }
+
 
 
 }
