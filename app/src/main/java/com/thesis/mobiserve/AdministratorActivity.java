@@ -70,4 +70,10 @@ public class AdministratorActivity extends AppCompatActivity {
         this.navController.popBackStack(R.id.navigation_admin_orders_record, false);
     }
 
+    public void showCateringReservationHistory(View v){
+        this.navController.navigate(R.id.navigation_admin_catering_reservation_history);
+    }
+
+
+
 }

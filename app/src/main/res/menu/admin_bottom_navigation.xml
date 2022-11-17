@@ -11,9 +11,9 @@
         android:title="Orders Record" />
 
     <item
-        android:id="@+id/navigation_admin_subscriber"
+        android:id="@+id/navigation_admin_catering_reservation_record"
         android:icon="@drawable/ic_check_admin"
-        android:title="Subscriber" />
+        android:title="Catering Reservations" />
 
     <item
         android:id="@+id/navigation_admin_settings"
